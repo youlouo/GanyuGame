@@ -114,3 +114,51 @@ QPushButton:pressed {
                                 stop:0 #a89a85, stop:1 #c8b9a6);
     border: 1px solid #bba579;
 }
+
+QPushButton:disabled {
+    background: #252f42;
+    color: #6c7a89;
+    border: 1px solid #3d4f66;
+}
+
+/* ================= БЛОК ЧАТА С НЕЙРОСЕТЬЮ ================= */
+#chatFrame {
+    background-color: #131b2e;
+    border: 1px solid #3d4f66;
+    border-radius: 16px;
+}
+
+#chatHeaderLabel {
+    color: #ffd76e;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+QTextBrowser#chatBrowser {
+    background-color: #0d1222;
+    border: 1px solid #2b394f;
+    border-radius: 10px;
+    padding: 8px;
+    color: #e6ecef;
+    font-size: 13px;
+}
+
+QLineEdit#chatInput {
+    background-color: #0d1222;
+    border: 1px solid #3d4f66;
+    border-radius: 10px;
+    padding: 8px 10px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+QLineEdit#chatInput:focus {
+    border: 1px solid #ffd76e;
+}
+
+#statusLabel {
+    color: #a0b4c8;
+    font-size: 11px;
+    font-weight: normal;
+}

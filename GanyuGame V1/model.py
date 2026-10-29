@@ -2,7 +2,10 @@ import json
 import time
 from pathlib import Path
 
-SAVE_FILE = Path("save.json")
+# Привязываем путь к папке проекта, чтобы save.json всегда читался корректно
+BASE_DIR = Path(__file__).resolve().parent
+SAVE_FILE = BASE_DIR / "save.json"
+
 
 def xp_for_level(level: int) -> int:
     return 50 + (level - 1) * 25  # 1 ур -> 50, 2 ур -> 75, 3 ур -> 100
@@ -22,7 +25,6 @@ class GanyuModel:
         self.last_update_time = time.time()
         self.load_game()
 
-
     def add_xp(self, amount: int = 1):
         self.xp += amount
         self.total_clicks += amount
@@ -36,9 +38,15 @@ class GanyuModel:
 
     # Показатели
     def update_stats(self):
-        self.hunger = max(0.0, self.hunger - 2.0)
-        self.energy = max(0.0, self.energy - 1.0)
-        self.happiness = max(0.0, self.happiness - 2.0)
+        self.hunger = max(0.0, self.hunger - 0.25)
+        if self.energy < 50:
+            self.energy = max(0.0, self.energy - 0.1)
+        else:
+            self.energy = max(0.0, self.energy - 0.05)
+        if self.happiness < 50:
+            self.happiness = max(0.0, self.happiness - 0.25)
+        else:
+            self.happiness = max(0.0, self.happiness - 0.20)
 
     def feed(self):
         self.hunger = min(100.0, self.hunger + 25.0)

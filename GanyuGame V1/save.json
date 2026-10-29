@@ -1,9 +1,9 @@
 {
-    "hunger": 0.0,
-    "energy": 0.0,
-    "happiness": 0.0,
-    "level": 13,
-    "xp": 175,
-    "total_clicks": 2425,
+    "hunger": 56.75,
+    "energy": 91.75000000000047,
+    "happiness": 65.59999999999951,
+    "level": 14,
+    "xp": 78,
+    "total_clicks": 2678,
     "last_update_time": 1789834086.4934242
 }
